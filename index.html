@@ -32,25 +32,28 @@
   <div class="container">
 
     <div ng-controller='mainController'>
+      <div class="row">
+        <h1>Hello world!</h1>
 
-      <h1>Hello world!</h1>
-
-      <form name="myForm">
-        <input type="text" ng-model="field" name="myField" required minlength="5" />
-        <div ng-messages="myForm.myField.$error">
-          <div class="alert alert-danger" ng-message="required">You did not enter a field</div>
-          <div class="alert alert-danger" ng-message="minlength">The value entered is too short</div>
-        </div>
-      </form>
-    
+        <form name="myForm">
+          <input type="text" ng-model="field" name="myField" required minlength="5" />
+          <br>
+          <div class='col-md-4' ng-messages="myForm.myField.$error">
+            <div class="alert alert-danger" ng-message="required">You did not enter a field</div>
+            <div class="alert alert-danger" ng-message="minlength">The value entered is too short</div>
+          </div>
+        </form>
+      
+      </div>
+      
       <div>
-        <label>What is your instagram name?</label>
-        <input type="text" ng-model='handle' />
+        <label>How much does it cost?</label>
+        <input type="text" ng-model='amount' />
       </div>
 
       <hr />
 
-      <h1>instagram.com/</h1>
+      <h1>It costs : {{ cashify() }}</h1>
 
     </div>
 
