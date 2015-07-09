@@ -1,9 +1,11 @@
-var myApp = angular.module('myApp', ["ngMessages"]);
+var myApp = angular.module('myApp', ["ngMessages", "ngResource"]);
 
-myApp.controller('mainController', function($scope) {
 
+myApp.controller('mainController', ['$scope', function($scope)] {
+// Order here matters, the argument in the function should line with the positon of $scope
+// The name of the arguments doesn't matter, it can be called anything
+
+  $scope.handle = '';
 });
 
-var searchPeople = function(firstName, lastName, height, age, occupation) {
-  return 'Jane Doe';
-}
+
